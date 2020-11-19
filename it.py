@@ -2,14 +2,14 @@ import datetime
 import time
 import a2s
 import csv
-
+wantedday = 18
 addr = ("66.70.214.118", 27015)
 while True:
-    if str(datetime.datetime.now().strftime("%d")) == "17":
+    if str(datetime.datetime.now().strftime("%d")) == wantedday - 1:
         print('incorrect day')
         time.sleep(10)
         continue
-    elif str(datetime.datetime.now().strftime("%d")) == "19":
+    elif str(datetime.datetime.now().strftime("%d")) == wantedday + 1:
         break
     try:
         pl = len(a2s.players(addr))
